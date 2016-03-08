@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Todo Liste</string>
+    <string name="app_name">Gestion de ToDo Liste</string>
     <string name="db_debug">Debuggage</string>
     <string name="title_activity_add_item">AddItemActivity</string>
 
