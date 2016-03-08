@@ -15,6 +15,12 @@
         app:showAsAction="never" />
 
     <item
+        android:id="@+id/db_delete"
+        android:title="Vider la base"
+        android:orderInCategory="120"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/add_item"
         android:title="@string/AddItemLabel"
         android:orderInCategory="90"
