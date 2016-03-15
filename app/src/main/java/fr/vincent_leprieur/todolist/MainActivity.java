@@ -3,6 +3,7 @@ package fr.vincent_leprieur.todolist;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -104,7 +105,9 @@ public class MainActivity extends ActionBarActivity {
         }
 
         if(id == R.id.db_delete){
-
+            SQLiteDatabase db = TodoBase.getDB(this);
+            db.delete(TodoBase.TABLE_NAME, null, null);
+            displayItems();
         }
 
         if (id == R.id.menu_propos) {
