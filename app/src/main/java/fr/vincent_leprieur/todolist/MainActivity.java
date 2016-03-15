@@ -7,8 +7,11 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -41,6 +44,25 @@ public class MainActivity extends ActionBarActivity {
                                               new int [] {R.id.label},
                                               0);
         lv.setAdapter(dataAdapter);
+
+        // handler du click court
+        lv.setClickable(true);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(MainActivity.this, "Click Court", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // handler du click long
+        lv.setLongClickable(true);
+        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(MainActivity.this, "Click Long", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
     }
 
 
@@ -86,8 +108,8 @@ public class MainActivity extends ActionBarActivity {
         }
 
         if (id == R.id.menu_propos) {
-           // Intent a_propos = new Intent(this, .class);
-            //startActivityForResult(addItem, ACT_ADD_ITEM);
+            Intent a_propos = new Intent(this, AProposActivity.class);
+            startActivity(a_propos);
         }
 
         return super.onOptionsItemSelected(item);
