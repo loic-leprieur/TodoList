@@ -21,6 +21,12 @@
         app:showAsAction="never" />
 
     <item
+        android:id="@+id/menu_propos"
+        android:title="A propos"
+        android:orderInCategory="130"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/add_item"
         android:title="@string/AddItemLabel"
         android:orderInCategory="90"

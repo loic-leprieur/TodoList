@@ -81,6 +81,15 @@ public class MainActivity extends ActionBarActivity {
             displayItems();
         }
 
+        if(id == R.id.db_delete){
+
+        }
+
+        if (id == R.id.menu_propos) {
+           // Intent a_propos = new Intent(this, .class);
+            //startActivityForResult(addItem, ACT_ADD_ITEM);
+        }
+
         return super.onOptionsItemSelected(item);
     }
 

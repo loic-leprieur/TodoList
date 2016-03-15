@@ -11,4 +11,5 @@
     <string name="AddItemLabel">Ajouter un item</string>
     <string name="sort">Tri</string>
     <string name="not_sort">Pas de tri</string>
+    <string name="title_activity_apropos">AProposActivity</string>
 </resources>
