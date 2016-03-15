@@ -1,5 +1,7 @@
 package fr.vincent_leprieur.todolist;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -47,26 +49,43 @@ public class MainActivity extends ActionBarActivity {
                                               0);
         lv.setAdapter(dataAdapter);
 
-        // handler du click court
+        /* handler du click court
         lv.setClickable(true);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(MainActivity.this, "Click Court", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
 
         // handler du click long
         lv.setLongClickable(true);
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(MainActivity.this, "Click Long ", Toast.LENGTH_SHORT).show();
+                /* Choix de la suppression - Bouton oui et non */
+                final long id = l;
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle("Suppression");
+                builder.setMessage("Voulez-vous supprimer cet élément ?");
+                builder.setPositiveButton("Oui", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        /* Supression de l'élément courant lors du click long*/
+                        SQLiteDatabase db = TodoBase.getDB(MainActivity.this);
+                        db.delete(TodoBase.TABLE_NAME, TodoBase.KEY_ID + "=" + id, null);
+                        displayItems();
+                        db.close();
+                    }
+                });
 
-                SQLiteDatabase db = TodoBase.getDB(MainActivity.this);
-                db.delete(TodoBase.TABLE_NAME, TodoBase.KEY_ID+"="+l, null);
-                displayItems();
-                db.close();
+                builder.setNegativeButton("Non", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                });
+
+                builder.show();
 
                 return false;
             }
