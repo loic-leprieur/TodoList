@@ -64,7 +64,7 @@ public class MainActivity extends ActionBarActivity {
                 Toast.makeText(MainActivity.this, "Click Long ", Toast.LENGTH_SHORT).show();
 
                 SQLiteDatabase db = TodoBase.getDB(MainActivity.this);
-                db.delete(TodoBase.TABLE_NAME, "_id=" + i, null);
+                db.delete(TodoBase.TABLE_NAME, TodoBase.KEY_ID+"="+l, null);
                 displayItems();
                 db.close();
 
