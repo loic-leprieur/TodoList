@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -60,7 +61,13 @@ public class MainActivity extends ActionBarActivity {
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(MainActivity.this, "Click Long", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Click Long ", Toast.LENGTH_SHORT).show();
+
+                SQLiteDatabase db = TodoBase.getDB(MainActivity.this);
+                db.delete(TodoBase.TABLE_NAME, "_id=" + i, null);
+                displayItems();
+                db.close();
+
                 return false;
             }
         });
