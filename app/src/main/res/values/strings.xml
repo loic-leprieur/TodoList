@@ -1,15 +1,14 @@
 <resources>
-    <string name="app_name">Gestion de ToDo Liste</string>
+    <string name="app_name">TODOListe</string>
     <string name="db_debug">Debuggage</string>
-    <string name="title_activity_add_item">AddItemActivity</string>
-
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-    <string name="Ajouter">New Button</string>
-    <string name="add">Ajouter</string>
-    <string name="hintAddItem">Nouvel item</string>
-    <string name="AddItemLabel">Ajouter un item</string>
-    <string name="sort">Tri</string>
-    <string name="not_sort">Pas de tri</string>
-    <string name="title_activity_apropos">AProposActivity</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="hintAddItem">Tapez le nom de votre tâche</string>
+    <string name="add">Confirmer</string>
+    <string name="not_sort">Ne pas trier</string>
+    <string name="sort">Trier</string>
+    <string name="AddItemLabel">Ajouter tâche</string>
+    <string name="title_activity_add_item">Ajout de tâche</string>
+    <string name="title_activity_apropos">A propos</string>
+    <string name="aPropos">VINCENT Mathias et LEPRIEUR Loïc</string>
 </resources>
+
