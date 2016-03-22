@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TODOListe</string>
+    <string name="app_name">VListe</string>
     <string name="db_debug">Debuggage</string>
     <string name="action_settings">Paramètres</string>
     <string name="hintAddItem">Tapez le nom de votre tâche</string>
