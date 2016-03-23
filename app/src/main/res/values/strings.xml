@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">VListe</string>
+    <string name="db_debug">Debuggage</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="hintAddItem">Tapez le nom de votre tâche</string>
+    <string name="add">Confirmer</string>
+    <string name="not_sort">Ne pas trier</string>
+    <string name="sort">Trier</string>
+    <string name="AddItemLabel">Ajouter tâche</string>
+    <string name="title_activity_add_item">Ajout de tâche</string>
+    <string name="title_activity_apropos">A propos</string>
+    <string name="aPropos">VINCENT Mathias et LEPRIEUR Loïc</string>
+</resources>
+
