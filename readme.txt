@@ -1,2 +1,0 @@
-LEPRIEUR Loic
-VINCENT Mathias
