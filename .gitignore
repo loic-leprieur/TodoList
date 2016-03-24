@@ -1,7 +1,5 @@
-gradle
 local.properties
-.idea
-.idea/
+
 .DS_Store
 gradlew
 gradlew.bat
@@ -36,7 +34,6 @@ Thumbs.db
 
 # Android Studio
 .idea
-.gradle
 build/
 
 # Emacs
