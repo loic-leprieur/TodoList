@@ -30,5 +30,6 @@
         android:id="@+id/add_item"
         android:title="@string/AddItemLabel"
         android:orderInCategory="90"
-        app:showAsAction="always" />
+        app:showAsAction="always"
+        android:icon="@drawable/ic_action_additem"/>
 </menu>
