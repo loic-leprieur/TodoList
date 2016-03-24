@@ -105,7 +105,14 @@ public class TodoBase extends SQLiteOpenHelper {
 
     public static Cursor fetchAllItems(Activity activity, boolean sorted) {
         SQLiteDatabase db = getDB(activity);
-        String sortLabel = (sorted)? KEY_LABEL + " ASC" : null;
+
+        String sortLabel = null;
+        if(sorted){
+            sortLabel = KEY_LABEL + " ASC";
+        }else{
+            sortLabel = KEY_LABEL + " DESC";
+        }
+
         Cursor cursor = db.query(TABLE_NAME, new String[]{KEY_ID, KEY_LABEL}, null, null, null, null, sortLabel);
         if (cursor != null)
             cursor.moveToFirst();
